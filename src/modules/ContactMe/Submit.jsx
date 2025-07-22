@@ -5,14 +5,24 @@ import SubmitButton from "./SubmitButton";
 
 const publicKey = import.meta.env.PUBLIC_KEY;
 
+
+
 const Submit = () => {
+    const [nombre, setNombre] = useState("");
+    const [email, setEmail] = useState("");
+    const [mensaje, setMensaje] = useState("");
+
     return (
         <div className="container rounded-3 m-auto p-3 shadow w-25">
             <h2>Formulario de Contacto</h2>
-            <form className="form">
-                <SubmitImput item="Nombre" />
-                <SubmitImput item="Email" />
-                <SubmitMessage item="Mensaje" />
+            <form className="form" onSubmit={test}>
+                <SubmitImput text="Nombre" item={nombre} setFunction={setNombre}/>
+                <SubmitImput text="Email" item={email} setFunction={setEmail}/>
+                <SubmitMessage
+                    text="Mensaje"
+                    item={mensaje}
+                    function={setMensaje}
+                />
                 <SubmitButton />
             </form>
         </div>

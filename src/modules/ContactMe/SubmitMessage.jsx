@@ -1,7 +1,7 @@
-const SubmitMessage = ({ item }) => {
+const SubmitMessage = ({ text }) => {
     return (
         <textarea
-            placeholder={item}
+            placeholder={text}
             className="d-block my-3 form-control"
             rows="4"
         ></textarea>
