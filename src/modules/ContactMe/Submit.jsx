@@ -15,7 +15,7 @@ const Submit = () => {
     return (
         <div className="container rounded-3 m-auto p-3 shadow w-25">
             <h2>Formulario de Contacto</h2>
-            <form className="form" onSubmit={test}>
+            <form className="form" >
                 <SubmitImput text="Nombre" item={nombre} setFunction={setNombre}/>
                 <SubmitImput text="Email" item={email} setFunction={setEmail}/>
                 <SubmitMessage
