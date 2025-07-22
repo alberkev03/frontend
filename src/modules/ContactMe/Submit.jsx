@@ -9,7 +9,7 @@ const Submit = () => {
     return (
         <div className="container rounded-3 m-auto p-3 shadow w-25">
             <h2>Formulario de Contacto</h2>
-            <form className="form"> {/* Pending: working email send */}
+            <form className="form">
                 <SubmitImput item="Nombre" />
                 <SubmitImput item="Email" />
                 <SubmitMessage item="Mensaje" />

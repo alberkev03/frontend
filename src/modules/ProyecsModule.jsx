@@ -1,4 +1,3 @@
-import React from 'react'
 import Proyects from './Proyects'
 
 const ProyectsModule = () => {
