@@ -1,35 +1,33 @@
 import { useState, useEffect } from "react";
 
-async function getProyects() {
-    await fetch("http://localhost:3000/api/proyects")
-        .then((response) => response.json())
-        .then((data) => {
-            return data.payload;
-        })
-        .catch((error) => {
-            console.error("Error fetching proyectos:", error);
-        });
-}
 const Proyects = () => {
     const [proyects, setProyects] = useState([]);
+
     useEffect(() => {
-        getProyects().then((data) => {
-            setProyects(data);
-        });
-    });
+        fetch("http://localhost:3000/api/proyects")
+            .then((res) => res.json())
+            .then((data) => {
+                setProyects(data.payload || []);
+            })
+            .catch((error) => {
+                console.error("Error fetching proyectos:", error);
+            });
+    }, []);
+
     return (
-        <div className="card">
-            <div className="card-header">
-                <h2>Proyectos</h2>
-            </div>
-            <div className="card-body">
-                {proyects.map((proyecto, index) => (
-                    <div key={index} className="proyecto-item">
-                        <h3>{proyecto.name}</h3>
-                        <p>{proyecto.description}</p>
+        <div className="container">
+            <h2>Proyectos</h2>
+            {proyects.map((p) => {
+                return (
+                    <div className="card card-body m-5 p-2" key={p.nombre}>
+                        <h5 className="card-title">{p.nombre}</h5>
+                        <p className="card-text">{p.descripcion}</p>
+                        <a href={p.url} className="btn btn-primary">
+                            Ver Proyecto
+                        </a>
                     </div>
-                ))}
-            </div>
+                );
+            })}
         </div>
     );
 };
