@@ -20,7 +20,7 @@ const Submit = () => {
     };
     return (
         <div className="d-flex align-items-center justify-content-center vh-100">
-            <div className="container rounded-3 p-3 shadow w-25">
+            <div className="container container-sm rounded-3 p-3 shadow">
                 <h2>Formulario de Contacto</h2>
                 <form className="form" onSubmit={test}>
                     <SubmitImput
