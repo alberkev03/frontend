@@ -1,13 +1,22 @@
-import ProyecsModule from "./Pages/ProyecsModule";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ProyecsModule from "./Pages/ProyecsModule";
 import ContactMe from "./Pages/ContactMe";
+import Layout from "./Layout";
 
 function App() {
     return (
         <>
-            <ContactMe />
-            <ProyecsModule />
+            <Router>
+                <Routes>
+                    <Route element={<Layout />}>
+                        <Route path="/" element={<ProyecsModule />} />
+                        <Route path="/proyects" element={<ProyecsModule />} />
+                        <Route path="/contact" element={<ContactMe />} />
+                    </Route>
+                </Routes>
+            </Router>
         </>
     );
 }

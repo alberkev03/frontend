@@ -5,8 +5,7 @@ import SubmitButton from "./SubmitButton";
 
 const publicKey = import.meta.env.PUBLIC_KEY;
 
-
-function validateForm (e) {
+function validateForm(e) {
     e.preventDefault();
     console.log(e.target);
 }
@@ -18,20 +17,30 @@ const Submit = () => {
     const test = (e) => {
         e.preventDefault();
         console.log(nombre, email, mensaje);
-    }
+    };
     return (
-        <div className="container rounded-3 m-auto p-3 shadow w-25">
-            <h2>Formulario de Contacto</h2>
-            <form className="form" onSubmit={test}>
-                <SubmitImput text="Nombre" item={nombre} setFunction={setNombre}/>
-                <SubmitImput text="Email" item={email} setFunction={setEmail}/>
-                <SubmitMessage
-                    text="Mensaje"
-                    item={mensaje}
-                    function={setMensaje}
-                />
-                <SubmitButton />
-            </form>
+        <div className="d-flex align-items-center justify-content-center vh-100">
+            <div className="container rounded-3 p-3 shadow w-25">
+                <h2>Formulario de Contacto</h2>
+                <form className="form" onSubmit={test}>
+                    <SubmitImput
+                        text="Nombre"
+                        item={nombre}
+                        setFunction={setNombre}
+                    />
+                    <SubmitImput
+                        text="Email"
+                        item={email}
+                        setFunction={setEmail}
+                    />
+                    <SubmitMessage
+                        text="Mensaje"
+                        item={mensaje}
+                        function={setMensaje}
+                    />
+                    <SubmitButton />
+                </form>
+            </div>
         </div>
     );
 };

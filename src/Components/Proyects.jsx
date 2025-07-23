@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 const Proyects = () => {
     const [proyects, setProyects] = useState([]);
+    const [error, setError] = useState(null)
 
     useEffect(() => {
         fetch("http://localhost:3000/api/proyects")
@@ -10,10 +11,12 @@ const Proyects = () => {
                 setProyects(data.payload || []);
             })
             .catch((error) => {
-                console.error("Error fetching proyectos:", error);
+                setError(error.message);
             });
     }, []);
-
+    if (error) {
+        return <div className="container"><h2>Error: {error}</h2></div>;
+    }
     return (
         <div className="container">
             <h2>Proyectos</h2>
