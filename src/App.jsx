@@ -1,12 +1,13 @@
-import ProyecsModule from "./modules/ProyecsModule";
+import ProyecsModule from "./Pages/ProyecsModule";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import Submit from "./modules/ContactMe/Submit";
+import ContactMe from "./Pages/ContactMe";
 
 function App() {
     return (
         <>
-            <Submit />
+            <ContactMe />
+            <ProyecsModule />
         </>
     );
 }

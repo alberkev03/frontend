@@ -1,4 +1,4 @@
-import Proyects from './Proyects'
+import Proyects from '../Components/Proyects'
 
 const ProyectsModule = () => {
   return (
