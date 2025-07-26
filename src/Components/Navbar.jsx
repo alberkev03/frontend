@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ProyectsModule from "../Pages/ProyecsModule";
 
 const Navbar = () => {
     return (
@@ -12,9 +11,7 @@ const Navbar = () => {
                     </button>
                 </Link>
                 <Link to="/contact">
-                    <button className="btn btn-primary m-2">
-                        Proyectos
-                    </button>
+                    <button className="btn btn-primary m-2">Contáctame</button>
                 </Link>
             </nav>
         </div>

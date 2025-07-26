@@ -7,6 +7,7 @@ const SubmitImput = ({ item, text, setFunction }) => {
             placeholder={text}
             className="d-block my-3 form-control"
             onChange={(e) => setFunction(e.target.value)}
+            required
         />
     );
 };

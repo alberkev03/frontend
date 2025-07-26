@@ -1,4 +1,4 @@
-import Submit from "../Components/Submit";
+import Submit from "../Components/Contact";
 
 import React from 'react'
 
