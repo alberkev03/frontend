@@ -23,7 +23,7 @@ const Proyects = () => {
         );
     } else {
         return (
-            <div className="container">
+            <div className="container w-50 mt-3 pt-5">
                 <h2>Proyectos</h2>
                 {proyects.map((p) => {
                     return (
