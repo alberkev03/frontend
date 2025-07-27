@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import ProyectCard from "./ProyectCard";
 
 const Proyects = () => {
     const [proyects, setProyects] = useState([]);
@@ -26,13 +27,13 @@ const Proyects = () => {
                 <h2>Proyectos</h2>
                 {proyects.map((p) => {
                     return (
-                        <div className="card card-body m-5 p-2" key={p.nombre}>
-                            <h5 className="card-title">{p.nombre}</h5>
-                            <p className="card-text">{p.descripcion}</p>
-                            <a href={p.url} className="btn btn-primary">
-                                Ver Proyecto
-                            </a>
-                        </div>
+                        <ProyectCard
+                            key={p.nombre}
+                            nombre={p.nombre}
+                            descripcion={p.descripcion}
+                            url={p.url}
+                        />
+
                     );
                 })}
             </div>
