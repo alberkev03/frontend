@@ -6,7 +6,7 @@ const Navbar = () => {
         <div className="navbar-sm navbar-light bg-light fixed-top">
             <nav className="nav flex-column flex-sm-row  d-flex justify-content-between">
                 <div>
-                    <Link to="/hero">
+                    <Link to="/">
                         <button className="btn btn-outline-primary m-2">
                             Inicio
                         </button>

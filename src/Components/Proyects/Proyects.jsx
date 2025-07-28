@@ -5,8 +5,8 @@ const Proyects = () => {
     const [proyects, setProyects] = useState([]);
     const [error, setError] = useState(null);
 
-    useEffect(() => {
-        fetch("http://localhost:3000/api/proyects")
+    useEffect(()=> {
+        fetch("http://localhost:3000/api/proyects") //pendiente: Modularizar
             .then((res) => res.json())
             .then((data) => {
                 setProyects(data.payload || []);
@@ -17,13 +17,13 @@ const Proyects = () => {
     }, []);
     if (error) {
         return (
-            <div className="container">
-                <h2>Error: {error}</h2>
+            <div className="container w-50 mt-3 pt-5 mt-5">
+                <p>No se ha podido conectar a la base de datos: {error}</p>
             </div>
         );
     } else {
         return (
-            <div className="container w-50 mt-3 pt-5">
+            <div className="container w-50 mt-3 pt-5 mt-5">
                 <h2>Proyectos</h2>
                 {proyects.map((p) => {
                     return (
@@ -33,7 +33,6 @@ const Proyects = () => {
                             descripcion={p.descripcion}
                             url={p.url}
                         />
-
                     );
                 })}
             </div>
