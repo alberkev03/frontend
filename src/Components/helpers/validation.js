@@ -1,4 +1,4 @@
-const nombreTest = (regex, name, setNError) => {
+const nombreValidation = (regex, name, setNError) => {
     if (name.length === 0) {
         setNError("");
     } else if (name.length < 3) {
@@ -10,7 +10,7 @@ const nombreTest = (regex, name, setNError) => {
     }
 };
 
-const emailTest = (regex, email, setEError) => {
+const emailValidation = (regex, email, setEError) => {
     if (!regex.test(email)) {
         setEError("Utilice un correo válido");
     } else {
@@ -25,4 +25,4 @@ const disableButton = (nomError, emailError, mensaje, setActiveBtn) => {
         setActiveBtn(true);
     }
 };
-export { nombreTest, emailTest, disableButton };
+export { nombreValidation, emailValidation, disableButton };
