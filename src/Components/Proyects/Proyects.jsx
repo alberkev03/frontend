@@ -1,24 +1,42 @@
 import { useState, useEffect } from "react";
 import ProyectCard from "./ProyectCard";
-
 const Proyects = () => {
     const [proyects, setProyects] = useState([]);
     const [error, setError] = useState(null);
 
-    useEffect(()=> {
-        fetch("http://localhost:3000/api/proyects") //pendiente: Modularizar
+    useEffect(() => {
+        fetch("http://localhost:3000/api/proyects")
             .then((res) => res.json())
             .then((data) => {
                 setProyects(data.payload || []);
             })
             .catch((error) => {
                 setError(error.message);
-            });
+            })
     }, []);
+
     if (error) {
+        const handleRetry = () => {
+            setError(null);
+            fetch("http://localhost:3000/api/proyects")
+                .then((res) => res.json())
+                .then((data) => {
+                    setProyects(data.payload || []);
+                })
+                .catch((error) => {
+                    setError(error.message);
+                });
+        };
+
         return (
             <div className="container w-50 mt-3 pt-5 mt-5">
                 <p>No se ha podido conectar a la base de datos: {error}</p>
+                <button
+                    className="btn btn-primary"
+                    onClick={handleRetry}
+                >
+                    Reintentar
+                </button>
             </div>
         );
     } else {
