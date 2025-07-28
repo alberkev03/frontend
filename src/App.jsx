@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ProyecsModule from "./Pages/ProyecsModule";
 import ContactMe from "./Pages/ContactMe";
 import Layout from "./Layout";
+import Hero from "./Pages/Hero";
 
 function App() {
     return (
@@ -11,7 +12,7 @@ function App() {
             <Router>
                 <Routes>
                     <Route element={<Layout />}>
-                        <Route path="/" element={<ProyecsModule />} />
+                        <Route path="/" element={<Hero />} />
                         <Route path="/proyects" element={<ProyecsModule />} />
                         <Route path="/contact" element={<ContactMe />} />
                     </Route>
