@@ -3,23 +3,25 @@ import SubmitImput from "./SubmitImput";
 import SubmitMessage from "./SubmitMessage";
 import SubmitButton from "./SubmitButton";
 import ErrorMsg from "./ErrorMsg";
+import { handleSubmit } from "../helpers/handleSubmit";
 
 const ContactForm = () => {
     const {
-        nombre, setNombre, nomError,
-        email, setEmail, emailError,
-        mensaje, setMensaje,
-        activeBtn
+        nombre,
+        setNombre,
+        nomError,
+        email,
+        setEmail,
+        emailError,
+        mensaje,
+        setMensaje,
+        activeBtn,
+        setActiveBtn
     } = useContactForm();
-
-    const test = (e) => {
-        e.preventDefault();
-        console.log(nombre, email, mensaje);
-    };
 
     return (
         <>
-            <form className="form" onSubmit={test}>
+            <form className="form" onSubmit={e=>handleSubmit(e, nombre, email, mensaje, setActiveBtn)}>
                 <SubmitImput
                     text="Nombre"
                     item={nombre}
@@ -39,7 +41,7 @@ const ContactForm = () => {
                     item={mensaje}
                     setFunction={setMensaje}
                 />
-                <SubmitButton isDisabled={activeBtn} />
+                <SubmitButton isDisabled={activeBtn}/>
             </form>
         </>
     );

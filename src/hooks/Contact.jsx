@@ -20,6 +20,6 @@ export function useContactForm() {
         nombre, setNombre, nomError,
         email, setEmail, emailError,
         mensaje, setMensaje,
-        activeBtn
+        activeBtn, setActiveBtn
     };
 }

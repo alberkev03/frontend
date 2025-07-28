@@ -5,15 +5,15 @@ const Hero = () => {
     return (
         <>
             <main>
-                <div className="row m-2 container">
+                <div className="row m-2 container w-50 m-auto">
                     <div className="col d-flex align-items-center justify-content-center vh-100">
                         <div>
                             <h1 className="py-3">
-                                Lorem ipsum dolor sit amet.
+                                Soy Kevin Alberto
                             </h1>
                             <h2 className="py-3">
-                                Lorem ipsum dolor, sit amet consectetur
-                                adipisicing elit. Expedita, beatae.
+                                Desarrollador web full stack
+                                -React, Node, Express, Bootstrap-
                             </h2>
                         </div>
                     </div>
